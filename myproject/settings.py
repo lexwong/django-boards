@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 from decouple import config, Csv
-import dj_database_url
+import dj-database-url
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,18 +26,18 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-'''DATABASES = {
-    'default': dj_database_url.config(
+DATABASES = {
+    'default': dj-database-url.config(
         default=config('DATABASE_URL')
     )
-}'''
+}
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
+}'''
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
